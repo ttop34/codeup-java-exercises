@@ -4,26 +4,30 @@ public class ControlFlowExercises {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("What number would you like to go up to?");
+        System.out.println("Please enter a numerical grade from 0 to 100");
         int input = scan.nextInt();
 
-        System.out.printf("%10s", "number | ");
-        System.out.printf(" %-5s", "square  |");
-        System.out.printf(" %-10s", "cubed");
+        String a = "A: 100 - 88";
+        String b = "B: 87 - 80";
+        String c = "C: 79 - 67";
+        String d = "D: 66 - 60";
+        String f = "F: 60 - 0";
 
-        System.out.println();
 
-        System.out.printf("%10s", "------ | ");
-        System.out.printf(" %-5s", "------- |");
-        System.out.printf(" %-10s", "-----");
-        System.out.println();
-
-        for (int i = 1; i <= input; i++){
-            System.out.printf("%-10s", i + "       |");
-            System.out.printf(" %-5s", i * i + "       |");
-            System.out.printf(" %-10s", i * i * i);
-            System.out.println();
+        if (input <= 100 && input >= 88){
+            System.out.println(a);
         }
-
+        if (input <= 87 && input >= 80){
+            System.out.println(b);
+        }
+        if (input <= 79 && input >= 67){
+            System.out.println(c);
+        }
+        if (input <= 66 && input >= 60){
+            System.out.println(d);
+        }
+        if (input <= 59 && input >= 0){
+            System.out.println(f);
+        }
     }
 }
