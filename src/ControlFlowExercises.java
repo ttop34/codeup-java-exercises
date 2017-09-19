@@ -1,22 +1,28 @@
+import java.util.Scanner;
 public class ControlFlowExercises {
 
     public static void main(String[] args) {
-        String y = "fizz";
-        String x = "buzz";
+        Scanner scan = new Scanner(System.in);
 
-        for (int i = 1; i <= 100; i++) {
-            if (i % 3 != 0 && i % 5 != 0) {
-                System.out.println(i);
-            } else {
-                if (i % 3 == 0) {
-                    System.out.print(y);
-                }
+        System.out.println("Please enter an integer");
+        int input = scan.nextInt();
 
-                if (i % 5 == 0) {
-                    System.out.print(x);
-                }
-                System.out.println();
-            }
+        System.out.printf("%10s", "number | ");
+        System.out.printf(" %-5s", "square  |");
+        System.out.printf(" %-10s", "cubed   ");
+
+        System.out.println();
+
+        System.out.printf("%10s", "------ | ");
+        System.out.printf(" %-5s", "------- |");
+        System.out.printf(" %-10s", "-----");
+        System.out.println();
+
+        for (int i = 1; i <= input; i++){
+            System.out.printf("%-10s", i + "       |");
+            System.out.printf(" %-5s", i * i + "       |");
+            System.out.printf(" %-10s", i * i * i + "      |");
+            System.out.println();
         }
 
     }
