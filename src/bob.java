@@ -14,17 +14,17 @@ public class bob {
 
             if (response.endsWith(Question)) {
                 System.out.println("Sure");
-            } else if (response.endsWith(Yell)) {
-                System.out.println("Whoa, chill out!");
             } else if (response.endsWith(sayNothing)) {
                 System.out.println("Fine. Be that way!");
+            } else if (response.endsWith(Yell) || response.equals(response.toUpperCase())) {
+                System.out.println("Whoa, chill out!");
             } else {
                 System.out.println("Whatever.");
             }
             System.out.println("Do you want to continue? y/n");
-            String option = input.nextLine();
+            String proceed = input.nextLine();
 
-            if (!option.equalsIgnoreCase("y")) {
+            if (!proceed.equalsIgnoreCase("y/n")) {
                 System.out.println("Ok, good bye");
                 break;
             }
