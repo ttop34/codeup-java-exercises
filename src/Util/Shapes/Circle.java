@@ -1,8 +1,8 @@
 package Util.Shapes;
 public class Circle {
     public static void main(String[] args) {
-        Circle circle = new Circle(3);
-        System.out.println(circle.getCircumference(3));
+        Circle circle = new Circle(4);
+        System.out.println(circle.getArea());
 
     }
 
@@ -15,13 +15,15 @@ public class Circle {
 
 
 
-    public double getArea(double radius){
+    public double getArea(){
+        System.out.print("The Area is " );
 
         return Math.PI * (radius * radius);
     }
 
 
-    public double getCircumference(double radius){
+    public double getCircumference(){
+        System.out.print("The Circumference is ");
         return 2 * Math.PI * radius;
 
     }

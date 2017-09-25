@@ -49,11 +49,17 @@ public class Input {
         return userInput;
     }
 
+    public double getDouble(){
+        System.out.println("Enter the radius of a circle");
+        double userInput = scanner.nextInt();
+        return userInput;
+    }
+
     public double getDouble(double min, double max){
         System.out.println("Enter a number between 1 and 10");
         double userInput = scanner.nextInt();
 
-        if (userInput < 1 || userInput > 10){
+        if (userInput < 1 || userInput > 100){
             userInput = getDouble(min, max);
 
         }
