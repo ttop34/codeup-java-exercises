@@ -2,41 +2,54 @@ import java.lang.Math;
 import java.util.Scanner;
 public class DiceApp {
     public static void main(String[] args) {
-        GetSides(true);
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter the number of sides for a pair of dice.");
+        int n = scan.nextInt();
+
+
+        String roll = Roll();
+
+        if (roll.equals("")) {
+            for (int i = 1; i <= 2; i++) {
+                n = (int) (Math.random() * n + 1);
+                System.out.println("This dye is " + n + "!");
+                System.out.println("");
+            }
+        }
+
+        Option();
+
 
     }
 
-
-    public static void GetSides(Boolean x){
+    public static String Roll(){
         Scanner scan = new Scanner(System.in);
-        System.out.println("Please enter the number of sides for a pair of dice ");
-        int n = scan.nextInt();
-        scan.nextLine();
+        System.out.println("Press enter to Roll the Dice");
+        String roll = scan.nextLine();
 
-            System.out.println("Press enter to Roll the Dice");
-            String roll = scan.nextLine();
-
-           while (true) {
-               if (roll.equals("")) {
-                   for (int i = 1; i <= 2; i++) {
-                       n = (int) (Math.random() * n + 1);
-                       System.out.println(" This is dye is " + n + "!");
-                   }
-               } else {
-                   System.out.println("Okay goodbye!");
-                   break;
-               }
-               System.out.println("");
+        return roll;
+        }
+//
+//
+    public static String Option(){
+        Scanner scan = new Scanner(System.in);
                System.out.println("Do you wish to continue? y/n");
                String option = scan.nextLine();
+
                if (option.equals("y")) {
-                   GetSides(true);
+                   GetSides();
                } else {
                    System.out.println("Okay goodbye!");
-                   break;
 
                }
-           }
+               return option;
+    }
+
+    public static int GetSides(){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter the number of sides for a pair of dice.");
+        int n = scan.nextInt();
+        return n;
     }
 
 }

@@ -4,18 +4,15 @@ import java.lang.Math;
 public class HighLow {
     public static void main(String[] args) {
         int gamePick = GamePick();
-        System.out.println(gamePick);
         System.out.println("Guess the number between 1 and 100");
         Scanner scan = new Scanner(System.in);
         int userGuess = scan.nextInt();
 
 
-        while (true)
-            if (userGuess < 1 || userGuess > 100) {
-           userGuess = GetGuess();
-            } else {
-                break;
+        while (userGuess < 1 || userGuess > 100) {
+                userGuess = GetGuess();
             }
+
         while(userGuess != gamePick) {
             if (userGuess < gamePick) {
                 System.out.println("HIGHER");
