@@ -20,20 +20,14 @@ public class Input {
         return userInput;
     }
 
-   public boolean yesNo(String prompt){
-       System.out.println(prompt);
-       String userInput = this.scanner.nextLine();
-
-       if (userInput.equals("y") || userInput.equals("yes")){
-           return true;
-       } else {
-           return false;
-       }
+   public boolean yesNo(){
+       String userInput = scanner.nextLine();
+       return  (userInput.equals("y") || userInput.equals("yes"));
     }
 
     public int getInt(int min, int max){
         System.out.println("Enter a number between 1 and 10");
-        int userInput = scanner.nextInt();
+        int userInput = getInt();
 
         if (userInput < 1 || userInput > 10){
             userInput = getInt(min, max);
@@ -45,19 +39,21 @@ public class Input {
     public int getInt(){
         System.out.println("Enter a number");
         int userInput = scanner.nextInt();
+        scanner.nextLine();
 
         return userInput;
     }
 
     public double getDouble(){
         System.out.println("Enter the radius of a circle");
-        double userInput = scanner.nextInt();
+        double userInput = scanner.nextDouble();
+        scanner.nextLine();
         return userInput;
     }
 
     public double getDouble(double min, double max){
         System.out.println("Enter a number between 1 and 10");
-        double userInput = scanner.nextInt();
+        double userInput = getDouble();
 
         if (userInput < 1 || userInput > 100){
             userInput = getDouble(min, max);
