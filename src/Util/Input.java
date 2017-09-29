@@ -25,6 +25,14 @@ public class Input {
        return  (userInput.equals("y") || userInput.equals("yes"));
     }
 
+    public int getInt(){
+        System.out.println("Enter a number");
+        int userInput = scanner.nextInt();
+        scanner.nextLine();
+
+        return userInput;
+    }
+
     public int getInt(int min, int max){
         System.out.println("Enter a number between 1 and 10");
         int userInput = getInt();
@@ -33,14 +41,6 @@ public class Input {
             userInput = getInt(min, max);
 
         }
-        return userInput;
-    }
-
-    public int getInt(){
-        System.out.println("Enter a number");
-        int userInput = scanner.nextInt();
-        scanner.nextLine();
-
         return userInput;
     }
 

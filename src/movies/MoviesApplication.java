@@ -1,13 +1,9 @@
 package movies;
 
 import Util.Input;
-
-import java.util.Scanner;
-
 public class MoviesApplication {
     public static void main(String[] args) {
         Input input = new Input();
-//        Scanner scanner = new Scanner(System.in);
         while (true)
        {
            System.out.println("What would you like to do?\n" +
@@ -17,7 +13,8 @@ public class MoviesApplication {
                    "2 - view movies in the animated category\n" +
                    "3 - view movies in the drama category\n" +
                    "4 - view movies in the horror category\n" +
-                   "5 - view movies in the scifi category\n");
+                   "5 - view movies in the scifi category\n" +
+                   "6 - add movie\n");
 
 
 
@@ -73,10 +70,16 @@ public class MoviesApplication {
                    }
 
                }
+           } else if (listOptions == 6){
+               input.getString("Please enter the name and category of a movie");
+
+               System.out.println();
+
+
            }
            System.out.println();
            System.out.println("would you like to continue? y/n");
-           if (input.yesNo() == false){
+           if (!input.yesNo()){
                break;
            }
        }
