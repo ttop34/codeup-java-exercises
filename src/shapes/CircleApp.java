@@ -1,5 +1,5 @@
-package Util.Shapes;
-import Util.Input;
+package shapes;
+import util.Input;
 public class CircleApp {
 
     public static void main(String[] args) {
