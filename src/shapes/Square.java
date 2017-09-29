@@ -1,4 +1,4 @@
-package Util.Shapes;
+package shapes;
 
 public class Square extends Rectangle {
 
