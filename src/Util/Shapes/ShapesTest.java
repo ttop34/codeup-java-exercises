@@ -2,10 +2,15 @@ package Util.Shapes;
 
 public class ShapesTest {
     public static void main(String[] args) {
-        Rectangle box1 = new Rectangle(5, 4);
-        Rectangle box2 = new Square(5);
+        Measurable myShape;
 
-        System.out.println(box1.getArea());
-        System.out.println(box2.getArea());
+        myShape = new Rectangle(5,1);
+        myShape = new Square(10);
+
+
+
+
+
+
     }
 }
