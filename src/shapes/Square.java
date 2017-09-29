@@ -3,7 +3,7 @@ package shapes;
 public class Square extends Quadrilateral {
 
 
-    public Square(int side) {
+    public Square(double side) {
         super(side, side);
     }
 
@@ -19,13 +19,13 @@ public class Square extends Quadrilateral {
     }
 
     @Override
-    public void setWidth(int width) {
+    public void setWidth(double width) {
         this.width = width;
         this.length = width;
     }
 
     @Override
-    public void setLength(int length) {
+    public void setLength(double length) {
         this.length = length;
         this.width = length;
     }
