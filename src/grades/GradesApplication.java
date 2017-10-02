@@ -1,3 +1,5 @@
+package grades;
+
 import grades.Student;
 
 import java.util.HashMap;
