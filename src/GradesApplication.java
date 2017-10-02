@@ -1,10 +1,12 @@
 import grades.Student;
 
 import java.util.HashMap;
+import util.Input;
 
 public class GradesApplication {
     public static void main(String[] args) {
         HashMap<String, Student> students = new HashMap<>();
+        Input input = new Input();
 
         Student Alex = new Student("Alex");
         Alex.addGrade(87);
@@ -15,6 +17,8 @@ public class GradesApplication {
         Tomas.addGrade(88);
         Tomas.addGrade(93);
         Tomas.addGrade(85);
+
+        System.out.println();
 
         Student Mari = new Student("Mari");
 
@@ -33,7 +37,35 @@ public class GradesApplication {
         students.put("JavaPanda", Joyce);
 
 
-        System.out.println(students.get(""));
+
+            System.out.println("Welcome!" + "\n" + "\n" + "Here are the github usernames of our students:" + "\n");
+
+            for (String key : students.keySet()) {
+                System.out.print("|" + key + "| ");
+            }
+
+            System.out.println("\n");
+
+        while (true) {
+
+            String userInput = input.getString("What student would you like to see more information on?");
+
+            if (students.containsKey(userInput)) {
+                System.out.println("\n" + "Name: " + students.get(userInput).getName() + " - " + "Github Username: " + userInput + "\n" + "Current Average: " );
+            }else {
+                System.out.println("Sorry, no student found with the gihub username of " + "\"" + userInput + "\"");
+
+            }
+
+            System.out.println("\n" + "Would you like to see another student?");
+           if (!input.yesNo()){
+               System.out.println("Goodbye, and have a wonderful day!");
+               break;
+           }
+        }
+
+
+
 
     }
 }

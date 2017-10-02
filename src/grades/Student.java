@@ -33,14 +33,15 @@ public class Student {
 
 
     public static void main(String[] args) {
-        Student student = new Student("elvin");
+        Student Elvin = new Student("elvin");
 
-        student.addGrade(91);
-        student.addGrade(100);
-        student.addGrade(95);
-        System.out.println(student.grades);
+        Elvin.addGrade(91);
+        Elvin.addGrade(100);
+        Elvin.addGrade(95);
+        Elvin.addGrade(90);
+        System.out.println(Elvin.grades);
 
-        System.out.println(student.getGradeAverage(student.grades));
+        System.out.println(Elvin.getGradeAverage(Elvin.grades));
 
 
 
