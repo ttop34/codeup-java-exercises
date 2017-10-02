@@ -21,7 +21,7 @@ public class Student {
     }
 
     public double getGradeAverage(){
-        double total = 0;
+        int total = 0;
         for(int i = 0; i < grades.size(); i++) {
             total = grades.get(i) + total;
 
