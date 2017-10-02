@@ -51,7 +51,7 @@ public class GradesApplication {
             String userInput = input.getString("What student would you like to see more information on?");
 
             if (students.containsKey(userInput)) {
-                System.out.println("\n" + "Name: " + students.get(userInput).getName() + " - " + "Github Username: " + userInput + "\n" + "Current Average: " );
+                System.out.println("\n" + "Name: " + students.get(userInput).getName() + " - " + "Github Username: " + userInput + "\n" + "Current Average: " + students.get(userInput).getGradeAverage());
             }else {
                 System.out.println("Sorry, no student found with the gihub username of " + "\"" + userInput + "\"");
 
@@ -63,6 +63,8 @@ public class GradesApplication {
                break;
            }
         }
+
+
 
 
 

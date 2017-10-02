@@ -4,7 +4,7 @@ import java.util.ArrayList;
 //import java.util.Arrays;
 public class Student {
     private String name;
-    private ArrayList grades;
+    private ArrayList<Integer> grades;
 
 
     public Student(String name) {
@@ -20,15 +20,14 @@ public class Student {
         grades.add(grade);
     }
 
-    public double getGradeAverage(ArrayList <Integer> grades){
-        Integer sum = 0;
-        if(!grades.isEmpty()) {
-            for (Integer grade : grades) {
-                sum += grade;
-            }
-            return sum.doubleValue() / grades.size();
+    public double getGradeAverage(){
+        double total = 0;
+        for(int i = 0; i < grades.size(); i++) {
+            total = grades.get(i) + total;
+
         }
-        return sum;
+        double average = total/grades.size();
+        return average;
     }
 
 
@@ -41,7 +40,9 @@ public class Student {
         Elvin.addGrade(90);
         System.out.println(Elvin.grades);
 
-        System.out.println(Elvin.getGradeAverage(Elvin.grades));
+        System.out.println(Elvin.getGradeAverage());
+
+
 
 
 
