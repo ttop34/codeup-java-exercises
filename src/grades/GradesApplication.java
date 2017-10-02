@@ -1,3 +1,5 @@
+package grades;
+
 import grades.Student;
 
 import java.util.HashMap;
@@ -114,14 +116,12 @@ public class GradesApplication {
                 if (attended.equals("A")){
                     absences++;
                 }
-            }
           }
-
-
+            }
         totalDays = students.get(option).getAttendance().size();
         double percentage = (totalDays - absences)/totalDays * 100;
         System.out.println(percentage + "%" + " attendance percentage");
         }
-    }
+}
 
 
