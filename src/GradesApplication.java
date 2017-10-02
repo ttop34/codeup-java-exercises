@@ -54,6 +54,11 @@ public class GradesApplication {
                 System.out.println(getClassAverage(students));
             }
 
+            System.out.println("would you like a CSV report of all students?");
+            if (input.yesNo()){
+                getCSV(students);
+            }
+
             String userInput = input.getString("What student would you like to see more information on?");
             if (students.containsKey(userInput)) {
                 System.out.println("\n" + "Name: " + students.get(userInput).getName()
@@ -81,6 +86,15 @@ public class GradesApplication {
         }
         classAverage = total/students.size();
         return classAverage;
+    }
+
+    public static void getCSV(HashMap<String, Student> students){
+        for (String student: students.keySet()){
+            System.out.print(students.get(student).getName() + ",");
+            System.out.print(student + ",");
+            System.out.print(students.get(student).getGradeAverage());
+            System.out.println();
+        }
     }
 
 
