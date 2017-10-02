@@ -1,6 +1,7 @@
 import grades.Student;
 
 import java.util.HashMap;
+
 import util.Input;
 
 public class GradesApplication {
@@ -33,41 +34,54 @@ public class GradesApplication {
 
         students.put("crankyMonkey", Alex);
         students.put("HappyHippo", Tomas);
-        students.put("OrangeKuala", Mari);
+        students.put("OrangeKoala", Mari);
         students.put("JavaPanda", Joyce);
+//
+//
 
+        System.out.println("Welcome!" + "\n" + "\n" + "Here are the github usernames of our students:" + "\n");
 
+        for (String key : students.keySet()) {
+            System.out.print("|" + key + "| ");
+        }
 
-            System.out.println("Welcome!" + "\n" + "\n" + "Here are the github usernames of our students:" + "\n");
-
-            for (String key : students.keySet()) {
-                System.out.print("|" + key + "| ");
-            }
-
-            System.out.println("\n");
+        System.out.println("\n");
 
         while (true) {
 
-            String userInput = input.getString("What student would you like to see more information on?");
+            System.out.println("Would you like to see the class average?");
+            if (input.yesNo()){
+                System.out.println(getClassAverage(students));
+            }
 
+            String userInput = input.getString("What student would you like to see more information on?");
             if (students.containsKey(userInput)) {
-                System.out.println("\n" + "Name: " + students.get(userInput).getName() + " - " + "Github Username: " + userInput + "\n" + "Current Average: " + students.get(userInput).getGradeAverage());
-            }else {
+                System.out.println("\n" + "Name: " + students.get(userInput).getName()
+                + " - " + "Github Username: " + userInput + "\n" + "Current Grades: "
+                + students.get(userInput).getGrades() + "\n" + "Current Average: " + students.get(userInput).getGradeAverage());
+            } else {
                 System.out.println("Sorry, no student found with the gihub username of " + "\"" + userInput + "\"");
 
             }
 
             System.out.println("\n" + "Would you like to see another student?");
-           if (!input.yesNo()){
-               System.out.println("Goodbye, and have a wonderful day!");
-               break;
-           }
+            if (!input.yesNo()) {
+                System.out.println("Goodbye, and have a wonderful day!");
+                break;
+            }
         }
-
-
-
-
-
-
     }
+
+    public static double getClassAverage(HashMap<String, Student> students){
+       double classAverage;
+       double total = 0;
+        for (Student student: students.values()){
+
+            total = student.getGradeAverage() + total;
+        }
+        classAverage = total/students.size();
+        return classAverage;
+    }
+
+
 }

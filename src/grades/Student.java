@@ -9,11 +9,15 @@ public class Student {
 
     public Student(String name) {
         this.name = name;
-        this.grades = new ArrayList<Integer>();
+        this.grades = new ArrayList<>();
     }
 
     public String getName() {
         return name;
+    }
+
+    public ArrayList<Integer> getGrades(){
+       return this.grades;
     }
 
     public void addGrade(int grade){
@@ -30,7 +34,6 @@ public class Student {
         return average;
     }
 
-
     public static void main(String[] args) {
         Student Elvin = new Student("elvin");
 
@@ -41,15 +44,7 @@ public class Student {
         System.out.println(Elvin.grades);
 
         System.out.println(Elvin.getGradeAverage());
-
-
-
-
-
-
-
-
-
     }
+
 
 }
