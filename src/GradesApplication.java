@@ -14,6 +14,7 @@ public class GradesApplication {
         Alex.addGrade(92);
         Alex.addGrade(90);
 
+
         Student Tomas = new Student("Tomas");
         Tomas.addGrade(88);
         Tomas.addGrade(93);
@@ -22,6 +23,12 @@ public class GradesApplication {
         System.out.println();
 
         Student Mari = new Student("Mari");
+
+        Mari.recordAttendance("2017-10-02", "P");
+        Mari.recordAttendance("2017-10-03", "P");
+        Mari.recordAttendance("2017-10-04", "A");
+        Mari.recordAttendance("2017-10-05", "A");
+        Mari.recordAttendance("2017-10-06", "P");
 
         Mari.addGrade(100);
         Mari.addGrade(74);
@@ -36,8 +43,8 @@ public class GradesApplication {
         students.put("HappyHippo", Tomas);
         students.put("OrangeKoala", Mari);
         students.put("JavaPanda", Joyce);
-//
-//
+
+        getAttendancePercentage(students, "OrangeKoala");
 
         System.out.println("Welcome!" + "\n" + "\n" + "Here are the github usernames of our students:" + "\n");
 
@@ -97,5 +104,24 @@ public class GradesApplication {
         }
     }
 
+    public static void getAttendancePercentage(HashMap<String, Student> students, String option){
+        double totalDays = 0;
+        double absences =0;
 
-}
+        for (String stud: students.keySet()){
+            students.get(stud).getAttendance().values();
+            for(String attended: students.get(stud).getAttendance().values()){
+                if (attended.equals("A")){
+                    absences++;
+                }
+            }
+          }
+
+
+        totalDays = students.get(option).getAttendance().size();
+        double percentage = (totalDays - absences)/totalDays * 100;
+        System.out.println(percentage + "%" + " attendance percentage");
+        }
+    }
+
+
