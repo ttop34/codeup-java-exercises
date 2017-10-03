@@ -25,12 +25,20 @@ public class Input {
        return  (userInput.equals("y") || userInput.equals("yes"));
     }
 
-    public int getInt(){
+    public int getInt() {
         System.out.println("Enter a number");
-        int userInput = scanner.nextInt();
-        scanner.nextLine();
+        String userInput = scanner.next();
+//        scanner.nextLine();
 
-        return userInput;
+
+        try {
+            return Integer.valueOf(userInput);
+        } catch (NumberFormatException e) {
+            System.out.println("You didnt enter a number!");
+
+
+        }
+        return getInt();
     }
 
     public int getInt(int min, int max){
@@ -46,9 +54,15 @@ public class Input {
 
     public double getDouble(){
         System.out.println("Enter the radius of a circle");
-        double userInput = scanner.nextDouble();
+        String userInput = scanner.next();
         scanner.nextLine();
-        return userInput;
+
+        try {
+            return Double.valueOf(userInput);
+        } catch (NumberFormatException e) {
+            System.out.println("You didn\'t enter a Double!");
+        }
+        return getDouble();
     }
 
     public double getDouble(double min, double max){
@@ -65,6 +79,6 @@ public class Input {
     }
 
 
+    }
 
 
-}

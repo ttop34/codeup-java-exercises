@@ -1,5 +1,6 @@
 package grades;
 
+import com.sun.corba.se.impl.oa.toa.TOA;
 import grades.Student;
 
 import java.util.HashMap;
@@ -28,8 +29,8 @@ public class GradesApplication {
 
         Mari.recordAttendance("2017-10-02", "P");
         Mari.recordAttendance("2017-10-03", "P");
-        Mari.recordAttendance("2017-10-04", "A");
-        Mari.recordAttendance("2017-10-05", "A");
+        Mari.recordAttendance("2017-10-04", "P");
+        Mari.recordAttendance("2017-10-05", "P");
         Mari.recordAttendance("2017-10-06", "P");
 
         Mari.addGrade(100);
@@ -107,7 +108,7 @@ public class GradesApplication {
     }
 
     public static void getAttendancePercentage(HashMap<String, Student> students, String option){
-        double totalDays = 0;
+        double totalDays;
         double absences =0;
 
         for (String stud: students.keySet()){
@@ -119,7 +120,7 @@ public class GradesApplication {
           }
             }
         totalDays = students.get(option).getAttendance().size();
-        double percentage = (totalDays - absences)/totalDays * 100;
+        double percentage = (totalDays - absences) / totalDays;
         System.out.println(percentage + "%" + " attendance percentage");
         }
 }
