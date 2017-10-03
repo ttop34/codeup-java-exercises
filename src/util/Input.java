@@ -78,7 +78,19 @@ public class Input {
 
     }
 
+    public int getBinary(){
+        System.out.print("Enter a binary number: ");
+        String userInput = scanner.next();
+
+        return Integer.valueOf(userInput, 2);
+    }
+
+    public int getHexadecimal() {
+        System.out.print("Enter a hexidecimal number:");
+        String userInput = scanner.nextLine();
+        return Integer.valueOf(userInput, 16);
 
     }
+}
 
 
