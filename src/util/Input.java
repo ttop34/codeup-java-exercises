@@ -61,8 +61,8 @@ public class Input {
             return Double.valueOf(userInput);
         } catch (NumberFormatException e) {
             System.out.println("You didn\'t enter a Double!");
+            return getDouble();
         }
-        return getDouble();
     }
 
     public double getDouble(double min, double max){
@@ -82,14 +82,24 @@ public class Input {
         System.out.print("Enter a binary number: ");
         String userInput = scanner.next();
 
-        return Integer.valueOf(userInput, 2);
+        try {
+            return Integer.valueOf(userInput, 2);
+        } catch (NumberFormatException e) {
+            System.out.println("You didn\'t enter valid Binary!");
+            return getBinary();
+        }
     }
 
     public int getHexadecimal() {
         System.out.print("Enter a hexidecimal number:");
         String userInput = scanner.nextLine();
-        return Integer.valueOf(userInput, 16);
 
+        try {
+            return Integer.valueOf(userInput, 16);
+        } catch (NumberFormatException e) {
+            System.out.println("You didn\'t enter a valid hex!");
+            return getHexadecimal();
+        }
     }
 }
 
